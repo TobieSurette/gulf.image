@@ -1,6 +1,9 @@
-#' Label groups of connected elements
+#' Group Connected Matrix Elements
+#' 
+#' @description This function applies an algorithm to identify groups matrix elements, such as as pixels
+#' on an image, which are contiguous, i.e. touch each other, and assigns a unique label to each group.
 #'
-#' @param z Numerical or logical vector or matrix.
+#' @param x Numerical or logical vector or matrix.
 #' 
 #' @examples 
 #' # Create simple image:
@@ -22,6 +25,7 @@
 #' image(v)
 #' 
 #' @export label
+#' 
 
 label_1d <- function(x){
    v <- cumsum((x-c(0, x[-length(x)])) == 1) 
@@ -62,15 +66,13 @@ label_2d <- function(x){
    return(connected)
 }
 
-label <- function(z){
+label <- function(x){
    # Check input parameters:
-   if (is.factor(z))       z <- as.numeric(z)
-   if (!is.numeric(z))     stop("'z' must be numeric or logical.")
-   if (length(dim(z)) > 2) stop("'z' must be a vector or matrix.")
+   if (is.factor(x))       x <- as.numeric(x)
+   if (!is.numeric(x))     stop("'x' must be numeric or logical.")
+   if (length(dim(x)) > 2) stop("'x' must be a vector or matrix.")
   
-   if (is.null(dim(z))) v <- label_1d(z) else v <- label_2d(z)
+   if (is.null(dim(x))) v <- label_1d(x) else v <- label_2d(x)
    
    return(v)
 }
-
-z <- matrix((runif(1000000) > 0.6)+1-1, nrow = 1000)

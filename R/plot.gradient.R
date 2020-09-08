@@ -18,13 +18,3 @@ plot.gradient <- function(x, type = "vector"){
    }
 
 }
-   
-   # Do image vector field gradient plot:
-   plot(c(xlim[1]-1, xlim[2]+1), c(ylim[1]-1, ylim[2]+1), type = "n", 
-        xaxs = "i", yaxs = "i", xlab = "", ylab = "")
-   
-   rasterImage(z[dim(z)[1]:1,,], xlim[1]-0.5, ylim[1]-0.5, xlim[2]+0.5, ylim[2]+0.5, interpolate = FALSE)
-
-   
-}
-   

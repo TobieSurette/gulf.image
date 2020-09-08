@@ -1,6 +1,6 @@
 #' Line intersections
 #' 
-#' Returns coordinates where pairs of lines intersect.
+#' @description Returns coordinates where pairs of lines intersect.
 #' 
 #' @param beta0 Two-element vector or two-column matrix of line slopes and intercept values.
 #' @param beta1 Two-element vector or two-column matrix of line slopes and intercept values.

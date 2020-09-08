@@ -1,13 +1,14 @@
 #' Image pixel coordinates
 #' 
-#' Returns image pixel coordinates.
+#' @description Returns image pixel coordinates.
 #' 
 #' @param x Matrix or RBG image
 #' @param expand Logical value specifying whether to expand the pixel coordinate values to cover the size of the image.
 #' 
 #' @return Returns a list of x and y coordinates.
+#' 
 #' @export coordinates
-
+#' 
 coordinates <- function(x, expand = FALSE){
    xx <- as.numeric(dimnames(x)$x)
    yy <- as.numeric(dimnames(x)$y)

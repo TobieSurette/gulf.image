@@ -1,6 +1,6 @@
 #' Image gradient
 #' 
-#' Calculate the gradient for an image.
+#' @description Calculate the gradient for an image.
 #' 
 #' @param x Matrix or RBG image
 #' @param type Character string indicating the type of grdient kernel to use ('sobel', 'scharr')
@@ -8,11 +8,10 @@
 #' @param polar Logical value specifying whether the output is in polar coordinates.
 #' 
 #' @return Returns a list of image matrices. Regular output returns x and y gradients while polar coordinates return magnitude and angles.
+#' 
 #' @export gradient
-
+#' 
 gradient <- function(x, type = "sobel", kernel = "3x3", polar = FALSE, slope = FALSE, intercept = FALSE){
-   
-   
    if (kernel == "3x3"){
        if (type == "sobel") M <- c(1,2,1)
        if (type == "scharr") M <- c(47, 162, 47)
